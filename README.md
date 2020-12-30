@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _The ansible-playbooks ![install-elk.yml and filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/tree/main/Ansible) are needed to install and implement the Elk-Server._
+  - _The ansible-playbooks ![elk.yml] (https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml)and ![filebeat-playbook.yml] (https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server._
 
 This document contains the following details:
 - Description of the Topologu
@@ -27,13 +27,12 @@ Load balancing ensures that the application will be highly availabile, in additi
 - _What is the advantage of a jump box?_
    The JumpBox is a secure admin workstation which requires all administrators to connect to the JumpBox before performing any configuration for non-repudiation.
 
-Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
+Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the logs and system traffic.
 - _What does Filebeat watch for?_
    Filebeat watches the log files and locations, and collects log events that you specify. 
 - _What does Metricbeat record?_
    Metricbeat records metric and statistical data from the operating system and from services running on the server.
 The configuration details of each machine may be found below.
-_Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name       | Function        | IP Address | Operating System    |
 |------------|-----------------|------------|---------------------|
@@ -47,13 +46,13 @@ _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdow
 
 The machines on the internal network are not exposed to the public Internet. 
 
-Only the _____ machine can accept connections from the Internet. Access to this machine is only allowed from the following IP addresses:
-- _TODO: Add whitelisted IP addresses_
+Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the localhost's public IP Address.
 
-Machines within the network can only be accessed by _____.
+Machines within the network can only be accessed by SSH.
 - _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
 
 A summary of the access policies in place can be found in the table below.
+Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
 | Name     | Publicly Accessible | Allowed IP Addresses |
 |----------|---------------------|----------------------|
