@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _The ansible-playbooks [elk.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml) and [filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server._
+  - _The ansible-playbooks: [elk.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml) and [filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server._
 
 This document contains the following details:
 - Description of the Topologu
@@ -32,7 +32,8 @@ Integrating an ELK server allows users to easily monitor the vulnerable VMs for 
    Filebeat watches the log files and locations, and collects log events that you specify. 
 - _What does Metricbeat record?_
    Metricbeat records metric and statistical data from the operating system and from services running on the server.
-The configuration details of each machine may be found below.
+
+   The configuration details of each machine may be found below.
 
 | Name       | Function        | IP Address | Operating System    |
 |------------|-----------------|------------|---------------------|
@@ -63,13 +64,13 @@ A summary of the access policies in place can be found in the table below.
 
 ### Elk Configuration
 
-Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because...
-- _TODO: What is the main advantage of automating configuration with Ansible?_
+Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because: 
+- _The main advantages of automating configuration through Ansible is the ease of use and an extremely easy learning curve. Through the use of Playbooks you are able to configure multiple Machines through the use of a single command after initial configuration._
 
 The playbook implements the following tasks:
-- _TODO: In 3-5 bullets, explain the steps of the ELK installation play. E.g., install Docker; download image; etc._
-- ...
-- ...
+- Create a New VM (Note:named something simple "Elk-Server or ElkBox") Keep note of the Private IP (10.1.0.4) and the Public IP (0.0.0.0) you will need the Private IP to SSH into the VM and the Public IP to connect to the Kibana Portal (HTTP Site) to view all Metrics/Syslogs.
+- Download and Configure the "elk-docker" container "In the hosts.conf you will need to add a new group [elkservers or elkbox ] and the Private IP (10.1.0.4) to the group. Then you need to create a new ansible-playbook (elk.yml) that will download, install, configure the "Elk-Box" to map the following ports [5601,9200,5044], and start the container.
+- Launch and expose the container "After installing and starting the new container. You can verify that the container is up and running by SSHing into the container from your JumpBox. Once you are in the “Elk-Box”] run the command [sudo docker ps -a]
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
 
