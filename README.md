@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - _The ansible-playbooks ![elk.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml) and ![filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server._
+  - _The ansible-playbooks [elk.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml) and [filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server._
 
 This document contains the following details:
 - Description of the Topologu
@@ -49,16 +49,17 @@ The machines on the internal network are not exposed to the public Internet.
 Only the JumpBox machine can accept connections from the Internet. Access to this machine is only allowed from the localhost's public IP Address.
 
 Machines within the network can only be accessed by SSH.
-- _TODO: Which machine did you allow to access your ELK VM? What was its IP address?_
-
+- _Which machine did you allow to access your ELK VM? What was its IP address?_
+   The only machine that is able to connect to the Elk-Server (10.1.0.4) is via JumpBox from Private IP (10.0.0.4) 
 A summary of the access policies in place can be found in the table below.
-Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
-| Name     | Publicly Accessible | Allowed IP Addresses |
-|----------|---------------------|----------------------|
-| Jump Box | Yes/No              | 10.0.0.1 10.0.0.2    |
-|          |                     |                      |
-|          |                     |                      |
+| Name       | Publicly Accessible |  Allowed IP Addresses  |
+|------------|:-------------------:|:----------------------:|
+| JumpBox    |          No         | Personal IP Only       |
+| Web 1-VM   |          No         | 10.0.0.4               |
+| Web 2-VM   |          No         | 10.0.0.4               |
+| Web 3-VM   |          No         | 10.0.0.4               |
+| Elk Server |          No         | 10.0.0.4 & Personal IP |
 
 ### Elk Configuration
 
