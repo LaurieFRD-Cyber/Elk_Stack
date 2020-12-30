@@ -6,7 +6,7 @@ The files in this repository were used to configure the network depicted below.
 
 These files have been tested and used to generate a live ELK deployment on Azure. They can be used to either recreate the entire deployment pictured above. Alternatively, select portions of the.yml file may be used to install only certain pieces of it, such as Filebeat.
 
-  - The ansible-playbooks [Install Elk](install-elk.yml (Ansible/install-elk.yml) and (Ansible/filebeat-playbook.yml) are needed to install and implement the Elk-Server.
+  - _The ansible-playbooks ![install-elk.yml and filebeat-playbook.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/tree/main/Ansible) are needed to install and implement the Elk-Server._
 
 This document contains the following details:
 - Description of the Topologu
@@ -21,13 +21,17 @@ This document contains the following details:
 
 The main purpose of this network is to expose a load-balanced and monitored instance of DVWA, the D*mn Vulnerable Web Application.
 
-Load balancing ensures that the application will be highly _____, in addition to restricting _____ to the network.
-- _TODO: What aspect of security do load balancers protect? What is the advantage of a jump box?_
+Load balancing ensures that the application will be highly availabile, in addition to restricting access to the network.
+- _What aspect of security do load balancers protect?_ 
+   In regrads to the confidentiality, integrity,and availability (CIA) Triad. Load Balancers ensure the Availability aspect of the information security.  	
+- _What is the advantage of a jump box?_
+   The JumpBox is a secure admin workstation which requires all administrators to connect to the JumpBox before performing any configuration for non-repudiation.
 
 Integrating an ELK server allows users to easily monitor the vulnerable VMs for changes to the _____ and system _____.
-- _TODO: What does Filebeat watch for?_
-- _TODO: What does Metricbeat record?_
-
+- _What does Filebeat watch for?_
+   Filebeat watches the log files and locations, and collects log events that you specify. 
+- _What does Metricbeat record?_
+   Metricbeat records metric and statistical data from the operating system and from services running on the server.
 The configuration details of each machine may be found below.
 _Note: Use the [Markdown Table Generator](http://www.tablesgenerator.com/markdown_tables) to add/remove values from the table_.
 
