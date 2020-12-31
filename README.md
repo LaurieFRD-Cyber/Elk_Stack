@@ -51,7 +51,8 @@ Only the JumpBox machine can accept connections from the Internet. Access to thi
 
 Machines within the network can only be accessed by SSH.
 - _Which machine did you allow to access your ELK VM? What was its IP address?_
-   The only machine that is able to connect to the Elk-Server (10.1.0.4) is via JumpBox from Private IP (10.0.0.4) 
+   The only machine that is able to connect to the Elk-Server (10.1.0.4) is via JumpBox from Private IP (10.0.0.4).
+   
 A summary of the access policies in place can be found in the table below.
 
 | Name       | Publicly Accessible |  Allowed IP Addresses  |
@@ -65,14 +66,16 @@ A summary of the access policies in place can be found in the table below.
 ### Elk Configuration
 
 Ansible was used to automate configuration of the ELK machine. No configuration was performed manually, which is advantageous because: 
-- _The main advantages of automating configuration through Ansible is the ease of use and an extremely easy learning curve. Through the use of Playbooks you are able to configure multiple Machines through the use of a single command after initial configuration._
+- _The main advantages of automating configuration through Ansible is easy to use and it is extremely lightweight learning curve. Through the use of Playbooks, you are able to configure multiple Machines with the use of a single command after initial configuration._
 
 The playbook implements the following tasks:
-- Create a New VM (Note:named something simple "Elk-Server or ElkBox") Keep note of the Private IP (10.1.0.4) and the Public IP (0.0.0.0) you will need the Private IP to SSH into the VM and the Public IP to connect to the Kibana Portal (HTTP Site) to view all Metrics/Syslogs.
-- Download and Configure the "elk-docker" container "In the hosts.conf you will need to add a new group [elkservers or elkbox ] and the Private IP (10.1.0.4) to the group. Then you need to create a new ansible-playbook (elk.yml) that will download, install, configure the "Elk-Box" to map the following ports [5601,9200,5044], and start the container.
+- Create a New VM (Note:named something simple "Elk-Server or ElkBox") Keep note of the Private IP (10.1.0.4) and the Public IP (0.0.0.0). You will need the Private IP to SSH into the VM and the Public IP to connect to the Kibana Portal (HTTP Site) to view all Metrics/Syslogs.
+- Download and Configure the "elk-docker" container "In the hosts.conf you will need to add a new group [elkservers] and the Private IP (10.1.0.4) to the group. Then you need to create a new ansible-playbook [elk.yml](https://github.com/LaurieFRD-Cyber/Elk_Stack/blob/main/Ansible/install-elk.yml) that will download, install, configure the "Elk-Box" to map the following ports [5601,9200,5044], and start the container.
 - Launch and expose the container "After installing and starting the new container. You can verify that the container is up and running by SSHing into the container from your JumpBox. Once you are in the “Elk-Box”] run the command [sudo docker ps -a]
 
 The following screenshot displays the result of running `docker ps` after successfully configuring the ELK instance.
+
+![Docker-ps](Diagrams/docker_ps.png)
 
 **Note**: The following image link needs to be updated. Replace `docker_ps_output.png` with the name of your screenshot image file.  
 
