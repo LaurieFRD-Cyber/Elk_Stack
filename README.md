@@ -103,17 +103,17 @@ SSH into the control node and follow the steps below:
 - _Which file is the playbook? Where do you copy it?_
    The playbook is called filebeat-playbook.yml and it is copied in the "/etc/ansible/hosts/" directory.
 - _Which file do you update to make Ansible run the playbook on a specific machine? How do I specify which machine to install the ELK server on versus which to install Filebeat on?_
-- _Which URL do you navigate to in order to check that the ELK server is running?
+- _Which URL do you navigate to in order to check that the ELK server is running?_
    Your Elk-server's Public IP address (0.0.0.0:5601) or  curl localhost:5601/app/kibana
-_The commands needed to run the Ansible configuration for the Elk-Server are:
 
-  -ssh azureadmin@JumpBox(PublicIP)
-  -sudo docker container list -a (locate your ansible container)
-  -sudo docker start container (name of the container)
-  -sudo docker attach container (name of the container)
+The commands needed to run the Ansible configuration for the Elk-Server are:
+
+- ssh azureadmin@JumpBox(PublicIP)
+- sudo docker container list -a (locate your ansible container)
+- sudo docker start container (name of the container)
+- sudo docker attach container (name of the container)
    ![Docker_attach_ansible](Linux/docker_attach_ansible.png)
-  -ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server) wait a couple minutes for the implementation of the Elk-Server
-  
-  -ansible-playbook filebeat-playbook.yml (installs Filebeat and Metricbeat)
+- ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server) wait a couple minutes for the implementation of the Elk-Server
+- ansible-playbook filebeat-playbook.yml (installs Filebeat and Metricbeat)
 
   
