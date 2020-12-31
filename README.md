@@ -113,6 +113,7 @@ _The commands needed to run the Ansible configuration for the Elk-Server are:
   -sudo docker attach container (name of the container)
    ![Docker_attach_ansible](Linux/docker_attach_ansible.png)
   -ansible-playbook elk.yml (configures Elk-Server and starts the Elk container on the Elk-Server) wait a couple minutes for the implementation of the Elk-Server
+  
   -ansible-playbook filebeat-playbook.yml (installs Filebeat and Metricbeat)
 
   
